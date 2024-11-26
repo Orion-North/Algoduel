@@ -1,5 +1,6 @@
 ﻿# Algoduel
 Algoduel is a simple web-based game where you control a fighter using your own custom algorithm. Battle against an AI enemy by coding your strategy.
+![image](https://github.com/user-attachments/assets/99d5f854-9513-4ea7-92a7-3b9127f95bd0)
 
 ## Features
 Customizable Strategy: Write JavaScript code to control your fighter's actions.
