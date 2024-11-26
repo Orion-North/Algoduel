@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algoduel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Algoduel</h1>
+    <button id="infoButton">How to Play</button>
+    <div id="infoPopup" class="hidden">
+        <div class="popup-content">
+            <h2>How to Play</h2>
+            <p>In Algoduel, your fighter's actions are controlled by a simple algorithm.</p>
+            <ul>
+                <li><strong>attack():</strong> Deals damage to the enemy.</li>
+                <li><strong>heal():</strong> Restores your fighter's health.</li>
+                <li><strong>defend():</strong> Reduces incoming damage next turn.</li>
+            </ul>
+            <p>Variables you can use:</p>
+            <ul>
+                <li><strong>health:</strong> Your current health.</li>
+                <li><strong>enemy:</strong> The enemy fighter object (e.g., enemy.health).</li>
+            </ul>
+            <p>Example algorithm:</p>
+            <pre>
+if (enemy.health < 30) {
+    attack();
+} else if (health < 50) {
+    heal();
+} else {
+    defend();
+}
+            </pre>
+            <p>Good luck, and may the smartest strategy win!</p>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+    <div id="arena">
+        <div id="fighters">
+            <div class="fighter" id="player">
+                <h2>Player</h2>
+                <div class="health-bar">
+                    <div class="health-fill" id="player-health"></div>
+                </div>
+                <p id="player-health-text"></p>
+            </div>
+            <div class="fighter" id="enemy">
+                <h2>Enemy</h2>
+                <div class="health-bar">
+                    <div class="health-fill" id="enemy-health"></div>
+                </div>
+                <p id="enemy-health-text"></p>
+            </div>
+        </div>
+        <div id="log"></div>
+    </div>
+    <div id="controls">
+        <h3>Write Your Algorithm:</h3>
+        <textarea id="playerAlgorithm" rows="8">
+// Example Algorithm
+if (enemy.health < 30) {
+    attack();
+} else if (health < 50) {
+    heal();
+} else {
+    defend();
+}
+        </textarea>
+        <button onclick="startBattle()">Start Battle</button>
+    </div>
+    <script src="battle.js"></script>
+    <script>
+        // Info Popup Scripts
+        const infoButton = document.getElementById('infoButton');
+        const infoPopup = document.getElementById('infoPopup');
+        const closePopup = document.getElementById('closePopup');
+
+        infoButton.addEventListener('click', () => {
+            infoPopup.classList.remove('hidden');
+        });
+
+        closePopup.addEventListener('click', () => {
+            infoPopup.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
